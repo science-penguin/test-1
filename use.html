@@ -52,6 +52,22 @@ text_content.font = "20px Arial";
 const width = text_content.measureText(text).width;
 const newSize = Math.floor(window.innerWidth / (width / 15));
 document.getElementById("title").style.setProperty("font-size", newSize + "px");
+}
+function checkDevice() {
+const width_for_check = window.innerWidth;
+const height_for_check = window.innerHeight;
+const ratio = height_for_check / width_for_check;
+const isMobile = ratio > 1;
+if (!isMobile) {
+window.location.href = "/desktop-home";
+}
+}
+function onResize() {
+updateSize();
+checkDevice();
+}
+window.addEventListener("resize", onResize);
+onResize()
 </script>
 </body>
 </html>
