@@ -32,6 +32,6 @@ async function predict() {
 const prediction = await model.predict(webcam.canvas);
 let RipeProb = prediction[0].probability;
 let UnripeProb = prediction[1].probability;
-document.write(`<p>${RipeProb}/${UnripeProb}</p>`)
+console.log(`${RipeProb}/${UnripeProb}`)
 }
 </script>
