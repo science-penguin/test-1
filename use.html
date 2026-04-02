@@ -14,7 +14,7 @@ model = await tmImage.load(modelURL, metadataURL);
 maxPredictions = model.getTotalClasses();
 const flip = true;
 webcam = new tmImage.Webcam(200, 200, flip);
-await webcam.setup();
+await webcam.setup({ facingMode: "environment" });
 await webcam.play();
 window.requestAnimationFrame(loop);
 document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -32,6 +32,7 @@ async function predict() {
 const prediction = await model.predict(webcam.canvas);
 let RipeProb = prediction[0].probability;
 let UnripeProb = prediction[1].probability;
-console.log(`${RipeProb}/${UnripeProb}`)
+if(RipeProb>=UnripeProb) {
+document.
 }
 </script>
