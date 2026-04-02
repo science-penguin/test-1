@@ -9,7 +9,7 @@
 <h1 id="title">🍅Tomato Tester🍅</h1>
 <button style="background-color: rgb(210,220,255)" id="run-start" type="button">Start</button>
 <div id="webcam-container"></div>
-<div id="display"></div>
+<p id="display"></p>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -39,9 +39,9 @@ const prediction = await model.predict(webcam.canvas);
 let RipeProb = prediction[0].probability;
 let UnripeProb = prediction[1].probability;
 if (RipeProb >= UnripeProb) {
-document.getElementById("display").innerHTML = "<p>RIPE</p>";
+document.getElementById("display").textContent = "RIPE";
 } else {
-document.getElementById("display").innerHTML = "<p>UNRIPE</p>";
+document.getElementById("display").textContent = "UNRIPE";
 }
 }
 function updateSize() {
@@ -60,6 +60,14 @@ text_content_2.font = "20px Arial";
 const width_2 = text_content_2.measureText(text_2).width;
 const newSize_2 = Math.floor(window.innerWidth / (width_2 / 15));
 document.getElementById("run-start").style.setProperty("font-size", newSize_2 + "px");
+} else {
+const text_2 = "UNRIPE"; 
+const canvas_2 = document.createElement("canvas"); 
+const text_content_2 = canvas_2.getContext("2d");
+text_content_2.font = "20px Arial";
+const width_2 = text_content_2.measureText(text_2).width;
+const newSize_2 = Math.floor(window.innerWidth / (width_2 / 15));
+document.getElementById("display").style.setProperty("font-size", newSize_2 + "px");
 }
 }
 function checkDevice() {
