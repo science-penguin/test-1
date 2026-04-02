@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="A free online tool for classifing a tomato as either ripe or not ripe">
+<title>TOMATO TESTER</title>
+</head>
+<body style="display: flex;justify-content: center; text-align: center; flex-direction: column; background-color: rgb(190,200,240);">
+<h1 id="title">🍅Tomato Tester🍅</h1>
+<p id="text_1">Instantly classify the ripeness of tomatoes completely in browser using local machine learning!</p>
+<ul id="list" style="list-style: none; text-align: center; margin: 0 auto; padding: 0;">
+<li>• <strong>Cost:</strong> completly free</li>
+<li>• <strong>Ease of use:</strong> runs in browser; no install needed</li>
+<li>• <strong>Compatibility:</strong>  runs well with slow or older devices</li>
+<li>• <strong>Safety:</strong> runs locally, no images are sent to the cloud</li>
+<li>• <strong>Compatibility:</strong>  runs well with slow or older devices</li>
+<li>• <strong>Privacy conscious:</strong>  we don't collect or sell any of your data</li>
+<li>• <strong>Compatibility:</strong>  runs well with slow or older devices</li>
+<li>• <strong>Accurate:</strong> 92% accuracy from rigorous testing</li>
+</ul>
+<div style="height:2vh"></div>
+<button style="background-color: rgb(210,220,255)" id="button_1">Learn More</button>
+<div style="height:0.5vh"></div>
+<button style="background-color: rgb(210,220,255)" id="button_2">Use</button>
+<script>
+document.getElementById("button_1").addEventListener("click", ()=>{window.location.href = "/about"});
+document.getElementById("button_2").addEventListener("click", ()=>{window.location.href = "/use"});
+function checkDevice() {
+const width_for_check = window.innerWidth;
+const height_for_check = window.innerHeight;
+const ratio = height_for_check / width_for_check;
+const isMobile = ratio > 1;
+if (!isMobile) {
+window.location.href = "/desktop-home";
+}
+}
+updateSize();
+function updateSize() {
+const text = "🍅Tomato Tester🍅"; 
+const canvas = document.createElement("canvas"); 
+const text_content = canvas.getContext("2d");
+text_content.font = "20px Arial";
+const width = text_content.measureText(text).width;
+const newSize = Math.floor(window.innerWidth / (width / 15));
+document.getElementById("title").style.setProperty("font-size", newSize + "px");
+const text_2 = "Instantly classify the ripeness of tomatoes completely in browser using local machine learning!"; 
+const canvas_2 = document.createElement("canvas"); 
+const text_content_2 = canvas_2.getContext("2d");
+text_content_2.font = "20px Arial";
+const width_2 = text_content_2.measureText(text_2).width;
+const newSize_2 = Math.floor(window.innerWidth / (width_2 / 50));
+document.getElementById("text_1").style.setProperty("font-size", newSize_2 + "px");
+const text_3 = "• Privacy conscious:  we don't collect or sell any of your data"; 
+const canvas_3 = document.createElement("canvas"); 
+const text_content_3 = canvas_3.getContext("2d");
+text_content_3.font = "20px Arial";
+const width_3 = text_content_3.measureText(text_3).width;
+const newSize_3 = Math.floor(window.innerWidth / (width_3 / 20));
+document.getElementById("list").style.setProperty("font-size", newSize_3 + "px");
+const text_4 = "Learn More"; 
+const canvas_4 = document.createElement("canvas"); 
+const text_content_4 = canvas_4.getContext("2d");
+text_content_4.font = "20px Arial";
+const width_4 = text_content_4.measureText(text_4).width;
+const newSize_4 = Math.floor(window.innerWidth / (width_4 / 15));
+document.getElementById("button_1").style.setProperty("font-size", newSize_4 + "px");
+document.getElementById("button_2").style.setProperty("font-size", newSize_4 + "px");
+}
+function onResize() {
+updateSize();
+checkDevice();
+}
+window.addEventListener("resize", onResize);
+onResize()
+</script>
+</body>
+</html>
