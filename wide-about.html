@@ -27,6 +27,7 @@ text_content.font = "20px Arial";
 const width = text_content.measureText(text).width;
 const newSize = Math.floor(window.innerWidth / (width / 15));
 document.getElementById("title").style.setProperty("font-size", newSize + "px");
+canvas.remove();
 }
 function onResize() {
 updateSize();
