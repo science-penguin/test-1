@@ -11,6 +11,9 @@
 <p style="margin: 0;" id="text_2"><strong>Unknown Page</strong></p>
 <p style="margin: 0;" id="text_3"><strong><a href="/">Return Home</a></strong></p>
 <script>
+if(window.location.pathname != "/404") {
+window.location.pathname = "/404"
+}
 function checkDevice() {
 const width_for_check = window.innerWidth;
 const height_for_check = window.innerHeight;
