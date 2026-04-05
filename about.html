@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="A free online tool for classifing a tomato as either ripe or not ripe">
+<title>TomatoTester-HOME</title>
+</head>
+<body style="display: flex;justify-content: center; text-align: center; flex-direction: column; background-color: rgb(190,200,240);">
+<h1 id="title">🍅About Tomato Tester🍅</h1>
+<p id="main"><strong>Why❓:</strong><br>
+I made this project for my SAE, a rigorous, Supervised Agricultural Experience. To learn more about SAE’s, go <a href="https://www.ffa.org/educator_resources/sae-for-all-student-guide-2/">here</a>.
+<br><strong>How⚙️:</strong><br>
+This project utilizes <a href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</a>, a free, light weight, embeddable image classification model, to classify a tomato as either ripe or not ripe. I used a combination of 2 datasets for this project: <a href="https://github.com/up2metric/tomatOD">TomatoD</a> and <a href="https://github.com/laboroai/LaboroTomato">LaboroTomato</a>. Like both of the prior, this project is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0.</a> 
+<br><strong>When📆:</strong><br>
+This project was created on XX XXXX 2026
+</p>
+<script>
+function checkDevice() {
+const width_for_check = window.innerWidth;
+const height_for_check = window.innerHeight;
+const ratio = height_for_check / width_for_check;
+const isMobile = ratio > 1;
+if (!isMobile) {
+window.location.href = "/wide-about";
+}
+}
+updateSize();
+function updateSize() {
+const text = "🍅About Tomato Tester🍅";
+const canvas = document.createElement("canvas"); 
+const text_content = canvas.getContext("2d");
+text_content.font = "20px Arial";
+const width = text_content.measureText(text).width;
+const newSize = Math.floor(window.innerWidth / (width / 15));
+document.getElementById("title").style.setProperty("font-size", newSize + "px");
+const text_2 = "This project utilizes Google Teachable Machine, a free, light";
+const canvas_2 = document.createElement("canvas"); 
+const text_content_2 = canvas_2.getContext("2d");
+text_content_2.font = "20px Arial";
+const width_2 = text_content_2.measureText(text_2).width;
+const newSize_2 = Math.floor(window.innerWidth / (width_2 / 20));
+document.getElementById("main").style.setProperty("font-size", newSize_2 + "px");
+canvas.remove();
+canvas_2.remove();
+}
+function onResize() {
+updateSize();
+checkDevice();
+}
+window.addEventListener("resize", onResize);
+onResize()
+</script>
+</body>
+</html>
