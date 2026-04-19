@@ -14,7 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
-let is_running=0
+let is_running = 0
 const URL = "https://teachablemachine.withgoogle.com/models/urG5vST10/";
 let model, webcam, maxPredictions;
 async function init() {
@@ -28,7 +28,7 @@ await webcam.setup({ facingMode: "environment" });
 await webcam.play();
 window.requestAnimationFrame(loop);
 document.getElementById("webcam-container").appendChild(webcam.canvas);
-(webcam.canvas).style.setProperty("width", "100%")
+(webcam.canvas).style.setProperty("width", "100%");
 }
 async function loop() {
 webcam.update();
@@ -61,6 +61,7 @@ text_content_2.font = "20px Arial";
 const width_2 = text_content_2.measureText(text_2).width;
 const newSize_2 = Math.floor(window.innerWidth / (width_2 / 15));
 document.getElementById("run-start").style.setProperty("font-size", newSize_2 + "px");
+canvas_2.remove();
 } else {
 const text_2 = "UNRIPE"; 
 const canvas_2 = document.createElement("canvas"); 
@@ -69,9 +70,9 @@ text_content_2.font = "20px Arial";
 const width_2 = text_content_2.measureText(text_2).width;
 const newSize_2 = Math.floor(window.innerWidth / (width_2 / 15));
 document.getElementById("display").style.setProperty("font-size", newSize_2 + "px");
+canvas_2.remove();
 }
 canvas.remove();
-canvas_2.remove();
 }
 function checkDevice() {
 const width_for_check = window.innerWidth;
@@ -88,7 +89,7 @@ checkDevice();
 }
 window.addEventListener("resize", onResize);
 onResize()
-document.getElementById("run-start").addEventListener("click", ()=>{document.getElementById("run-start").remove();is_running=1;init();updateSize();})
+document.getElementById("run-start").addEventListener("click", ()=>{document.getElementById("run-start").remove();is_running=1;init();updateSize();});
 </script>
 </body>
 </html>
