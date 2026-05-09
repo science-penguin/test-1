@@ -19,8 +19,8 @@ let is_running = 0
 const URL = location.orgin;
 let model, webcam, maxPredictions;
 async function init() {
-const modelURL = URL + "model.json";
-const metadataURL = URL + "metadata.json";
+const modelURL = URL + "/model.json";
+const metadataURL = URL + "/metadata.json";
 model = await tmImage.load(modelURL, metadataURL);
 maxPredictions = model.getTotalClasses();
 const flip = false;
