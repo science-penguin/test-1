@@ -1,0 +1,7 @@
+TensorFlow.js is licensed under the Apache License 2.0.
+Copyright (c) The TensorFlow Authors.
+https://github.com/tensorflow/tfjs
+
+Teachable Machine Image Library is licensed under the Apache License 2.0.
+Copyright (c) Google LLC.
+https://github.com/googlecreativelab/teachablemachine-community
